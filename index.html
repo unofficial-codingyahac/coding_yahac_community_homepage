@@ -21,8 +21,46 @@
     gtag('js', new Date());
 
     gtag('config', 'G-0KSRB1ZWQN');
+
+    gtag('config', 'AW-10856232596');
     </script>
 
+
+    <!-- Event snippet for 코딩야학 디스코드 들어옴 conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+            window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10856232596/7xZBCJO0uaIDEJTt07go',
+            'event_callback': callback
+        });
+        return false;
+        }
+        </script>
+
+        <!-- Event snippet for 코딩야학 카카오톡 들어옴 conversion page
+        In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+        <script>
+            function gtag_report_conversion_kakaotalk(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-10856232596/aD7sCJa0uaIDEJTt07go',
+                'event_callback': callback
+            });
+            return false;
+            }
+            </script>
+    
+    
 </head>
 
 <body>
@@ -43,7 +81,7 @@
         <h1>코딩야학 커뮤니티</h1>
         <p>코딩을 공부하는 사람들의 온라인 커뮤니티</p>
         <br>
-        <p><a href="https://discord.gg/FFfkwCF"><b>코딩야학 디스코드</b></a><a href="https://open.kakao.com/o/gGOQRoyd"><b>코딩야학 카카오톡 비번 1111</b></a></p>
+        <p><a href="#" onclick="gtag_report_conversion('https://discord.gg/FFfkwCF');"><b>코딩야학 디스코드</b></a><a href="#" onclick="gtag_report_conversion_kakaotalk('https://open.kakao.com/o/gGOQRoyd');"><b>코딩야학 카카오톡 비번 1111</b></a></p>
     </header>
     <main>
         <hr>
