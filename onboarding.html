@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩야학 커뮤니티에 들어오신 것을 환영합니다!</title>
+    <style>
+        html,body{
+            padding:0px;
+            margin:0px;
+            height:100%;
+        }
+        section{
+            width:100%;
+            height:90%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+        section h1{
+            text-align:center;
+        }
+        section p{
+            text-align:center;
+        }
+        button{
+            width:100%;
+            height:10%;
+            background-color:#4CAF50;
+            border:none;
+            font-size:20px;
+            color:white;
+            font-weight:bold;
+        }
+
+        #one{
+            display:flex;
+        }
+        #two{
+            display:none;
+        }
+        #three{
+            display:none;
+        }
+        #four{
+            display:none;
+            height:100%;
+        }
+        #yes{
+            display:none;
+            height:100%;
+        }
+        #no{
+            display:none;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <section id = "one">
+        <div>
+            <h1>코딩야학 커뮤니티는...</h1>
+            <p>코딩을 공부하는 사람들이 서로 대화하고, 함께 공부하는 디스코드 커뮤니티입니다. </p>
+        </div>
+    </section>
+    <section id = "two">
+        <div>
+            <h1>인사해 보세요 ヾ(＾∇＾)</h1>
+            <p>'다음'을 누르면 코딩야학 커뮤니티 체험 페이지로 넘어갑니다. 하단 'Click here(대충 영어 어쩌구)'를 눌러 닉네임을 입력하면 대화가 가능하니 커뮤니티에 인사해 보세요</p>
+            <p>아 참, 이것저것 둘러보는 것도 잊지 마세요</p>
+            <p>tip: 로딩시간이 좀 걸릴 수도 있습니다.</p>
+        </div>
+    </section>
+    <section id = "three">
+        <widgetbot
+        server="336499288001478656"
+        channel="890932265385885696"
+        width="100%"
+        height="100%"
+>       </widgetbot>
+    </section>
+    <section id = "four">
+        <div>
+            <h1>코딩야학은 디스코드 커뮤니티입니다.</h1>
+            <p>들어가려면 디스코드 설치가 필요해요. 사용하고 계신 컴퓨터/스마트폰에 디스코드가 설치되어 있으신가요?</p>
+        </div>
+        <button style="margin-bottom:20px;" onclick="discord_yes()">예</button><button onclick="discord_no()">아니오</button>
+    </section>
+    <section id = "yes">
+        <div>
+            <h1>축하합니다! 당신은 코딩야학에 초대되셨습니다.</h1>
+            <a href="https://discord.gg/FFfkwCF"><button style="height:50px">코딩야학 들어가기</button></a>
+        </div>
+    </section>
+    <section id = "no">
+        <div>
+            <h1>아쉽네요 ㅎㅎ</h1>
+            <p>코딩야학 커뮤니티 홈페이지에서 코딩야학에 대해 더 알아보실 수 있습니다.</p>
+            <a href="index.html"><button style="height:50px">코딩야학 커뮤니티 홈페이지</button></a>
+        </div>
+    </section>
+    <button onclick="next();" id = "next">다음</button>
+    <script>
+        var page = 1; 
+        function next()
+        {
+            if(page == 1)
+            {
+                document.getElementById("one").style.display = "none";
+                document.getElementById("two").style.display = "flex";
+            }
+            else if(page == 2)
+            {
+                document.getElementById("two").style.display = "none";
+                document.getElementById("three").style.display = "flex";
+            }
+            else if(page == 3)
+            {
+                document.getElementById("three").style.display = "none";
+                document.getElementById("four").style.display = "flex";
+                document.getElementById("next").style.display = "none";
+            }
+            page += 1;
+        }
+
+        function discord_yes()
+        {
+            document.getElementById("four").style.display = "none";
+            document.getElementById("yes").style.display = "flex";
+            document.getElementById("next").style.display = "none";
+        }
+
+        function discord_no()
+        {
+            document.getElementById("four").style.display = "none";
+            document.getElementById("no").style.display = "flex";
+            document.getElementById("next").style.display = "none";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+</body>
+</html>
